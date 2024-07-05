@@ -2,15 +2,30 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import CustomLink from "../components/CustomLink.astro";
 ---
 
 <!doctype html>
-<html lang="en" class="bg-[#181818]">
+<html lang="en" class="bg-[#181818] text-white font-mono">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="flex flex-col justify-center items-center h-full w-full">
     <Header />
-    <main></main>
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10">
+      <div class="w-[30rem] h-fit pb-2 bg-[#1F1F1F] flex px-2 border-t-2 border-[#3070C2] flex-col gap-1">
+        <h2>what_is_code_quality.dev</h2>
+        <div class="flex gap-2 flex-col">
+          <p>
+            <CustomLink href="https://codequality.dev">codequality.dev</CustomLink> is a resource for software engineers and developes to learn how to write high quality code.
+          </p>
+          <p>
+            Learn how to write high quality code with industry experts from <CustomLink href="https://testing.googleblog.com/">Google</CustomLink>, <CustomLink href="https://engineering.fb.com/">Meta</CustomLink>, OpenAI, <CustomLink href="https://www.uber.com/en-AU/blog/engineering/">Uber</CustomLink> & more!<p>
+              <p>This site is a work in progress and will be updated with more resources, best practices, and blog posts over time.</p>
+            </p>
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
